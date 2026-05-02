@@ -1,7 +1,6 @@
 #include <iostream>
-#include <math.h>
 
-void shellSort(int dados[], int n) {
+void shellSort(int shellDados[], int n) {
 
     int gap = 1;
 
@@ -15,17 +14,39 @@ void shellSort(int dados[], int n) {
 
         for (int i = gap; i < n; i++) {
 
-            int temp = dados[i];
+            int temp = shellDados[i];
             int j = i;
 
-            while (j >= gap && dados[j - gap] > temp) {
-                dados[j] = dados[j - gap];
+            while (j >= gap && shellDados[j - gap] > temp) {
+                shellDados[j] = shellDados[j - gap];
                 j -= gap;
             }
 
-            dados[j] = temp;
+            shellDados[j] = temp;
         }
 
         gap = (gap - 1) / 3;
+    }
+}
+
+void combSort(int dados[], int k) {
+
+    double shrink = 1.3;
+    int gap = k;
+    bool sorted = false;
+
+    while (!sorted) {
+        gap = (int)(gap / shrink);
+        if (gap <= 1) {
+            gap = 1;
+            sorted = true;  // assume ordenado; troca desfaz isso
+        }
+
+        for (int i = 0; i + gap < k; i++) {
+            if (dados[i] > dados[i + gap]) {
+                std::swap(dados[i], dados[i + gap]);
+                sorted = false;  // houve troca, precisa de mais uma passada
+            }
+        }
     }
 }

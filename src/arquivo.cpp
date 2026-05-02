@@ -34,8 +34,7 @@ int escreverResultado(int dados[]){
 
     for (int i = 0; i < 1000000; i++){
     
-        arquivo << dados[i] << " ";
-        arquivo << endl;
+        arquivo << dados[i] << "\n";
 
     }
 

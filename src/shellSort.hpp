@@ -1,3 +1,5 @@
 #include <iostream>
 
-void shellSort(int dados[],int n);
+void shellSort(int shellDados[],int n);
+
+void combSort(int combDados[], int k);
