@@ -1,51 +1,44 @@
-#include <iostream>
+#include "shellSort.hpp"
+#include <algorithm>
 
-void shellSort(int shellDados[], int n) {
+void shellSort(int dados[], int n) {
+    // Pré-calcula toda a sequência de Knuth uma única vez
+    int gaps[20];
+    int ng = 0;
+    for (int g = 1; g < n; g = g * 3 + 1)
+        gaps[ng++] = g;
 
-    int gap = 1;
-
-    // gera maior gap válido
-    while (gap < n / 3) {
-        gap = 3 * gap + 1;
-    }
-
-    // percorre a sequência de trás pra frente
-    while (gap > 0) {
-
+    // Percorre do maior gap para o menor
+    for (int gi = ng - 1; gi >= 0; gi--) {
+        int gap = gaps[gi];
         for (int i = gap; i < n; i++) {
-
-            int temp = shellDados[i];
+            int temp = dados[i];
             int j = i;
-
-            while (j >= gap && shellDados[j - gap] > temp) {
-                shellDados[j] = shellDados[j - gap];
+            while (j >= gap && dados[j - gap] > temp) {
+                dados[j] = dados[j - gap];
                 j -= gap;
             }
-
-            shellDados[j] = temp;
+            dados[j] = temp;
         }
-
-        gap = (gap - 1) / 3;
     }
 }
 
-void combSort(int dados[], int k) {
-
-    double shrink = 1.3;
-    int gap = k;
+void combSort(int dados[], int n) {
+    // gap * 10 / 13 equivale a gap / 1.3 sem usar float
+    int gap = n;
     bool sorted = false;
 
     while (!sorted) {
-        gap = (int)(gap / shrink);
-        if (gap <= 1) {
-            gap = 1;
-            sorted = true;  // assume ordenado; troca desfaz isso
-        }
+        gap = gap * 10 / 13;
+        if (gap < 1) gap = 1;
+        sorted = (gap == 1);
 
-        for (int i = 0; i + gap < k; i++) {
+        for (int i = 0; i + gap < n; i++) {
             if (dados[i] > dados[i + gap]) {
-                std::swap(dados[i], dados[i + gap]);
-                sorted = false;  // houve troca, precisa de mais uma passada
+                int t = dados[i];
+                dados[i] = dados[i + gap];
+                dados[i + gap] = t;
+                sorted = false;
             }
         }
     }

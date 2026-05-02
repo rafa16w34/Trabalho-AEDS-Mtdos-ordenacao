@@ -1,5 +1,4 @@
-#include <iostream>
+#pragma once
 
-void shellSort(int shellDados[],int n);
-
-void combSort(int combDados[], int k);
+void shellSort(int dados[], int n);
+void combSort(int dados[], int n);
