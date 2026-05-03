@@ -1,2 +1,3 @@
-# Trabalho-AEDS-Mtdos-ordenacao
-Trabalho em grupo sobre metodos de ordenação
+# Trabalho de AEDS - Métodos de Ordenação
+
+Este projeto implementa o algoritmo de ordenação **Shell Sort** em Java.
