@@ -1,4 +1,17 @@
+// Sort.hpp
 #pragma once
 
-void shellSort(int dados[], int n);
-void combSort(int dados[], int n);
+class Sort {
+protected:
+    int* dados;
+    int  n;
+
+public:
+    Sort(int* dados, int n);
+    virtual ~Sort() = default;
+
+    virtual void ordenar() = 0;  // método puramente virtual — cada filho implementa
+};
+
+
+

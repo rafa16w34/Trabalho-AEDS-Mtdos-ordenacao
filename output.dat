@@ -1,75 +1,75 @@
 
 10^2 - random
-Tempo Shell Sort: 32 microsegundos
-Tempo Comb Sort:  15 microsegundos
+Tempo Shell Sort:  14 us
+Tempo Comb Sort:   18 us
 Memoria utilizada: 1 KB
 
 10^2 - crescente
-Tempo Shell Sort: 2 microsegundos
-Tempo Comb Sort:  5 microsegundos
+Tempo Shell Sort:  3 us
+Tempo Comb Sort:   6 us
 Memoria utilizada: 1 KB
 
 10^2 - decrescente
-Tempo Shell Sort: 7 microsegundos
-Tempo Comb Sort:  9 microsegundos
+Tempo Shell Sort:  6 us
+Tempo Comb Sort:   11 us
 Memoria utilizada: 1 KB
 
 10^3 - random
-Tempo Shell Sort: 219 microsegundos
-Tempo Comb Sort:  263 microsegundos
+Tempo Shell Sort:  252 us
+Tempo Comb Sort:   304 us
 Memoria utilizada: 11 KB
 
 10^3 - crescente
-Tempo Shell Sort: 36 microsegundos
-Tempo Comb Sort:  87 microsegundos
+Tempo Shell Sort:  44 us
+Tempo Comb Sort:   101 us
 Memoria utilizada: 11 KB
 
 10^3 - decrescente
-Tempo Shell Sort: 66 microsegundos
-Tempo Comb Sort:  120 microsegundos
+Tempo Shell Sort:  71 us
+Tempo Comb Sort:   121 us
 Memoria utilizada: 11 KB
 
 10^4 - random
-Tempo Shell Sort: 3635 microsegundos
-Tempo Comb Sort:  4527 microsegundos
+Tempo Shell Sort:  3552 us
+Tempo Comb Sort:   4121 us
 Memoria utilizada: 117 KB
 
 10^4 - crescente
-Tempo Shell Sort: 499 microsegundos
-Tempo Comb Sort:  1291 microsegundos
+Tempo Shell Sort:  483 us
+Tempo Comb Sort:   1011 us
 Memoria utilizada: 117 KB
 
 10^4 - decrescente
-Tempo Shell Sort: 1009 microsegundos
-Tempo Comb Sort:  2094 microsegundos
+Tempo Shell Sort:  989 us
+Tempo Comb Sort:   1744 us
 Memoria utilizada: 117 KB
 
 10^5 - random
-Tempo Shell Sort: 48436 microsegundos
-Tempo Comb Sort:  24930 microsegundos
+Tempo Shell Sort:  61662 us
+Tempo Comb Sort:   42873 us
 Memoria utilizada: 1171 KB
 
 10^5 - crescente
-Tempo Shell Sort: 2852 microsegundos
-Tempo Comb Sort:  6243 microsegundos
+Tempo Shell Sort:  4205 us
+Tempo Comb Sort:   9737 us
 Memoria utilizada: 1171 KB
 
 10^5 - decrescente
-Tempo Shell Sort: 5564 microsegundos
-Tempo Comb Sort:  8588 microsegundos
+Tempo Shell Sort:  7260 us
+Tempo Comb Sort:   16814 us
 Memoria utilizada: 1171 KB
 
 10^6 - random
-Tempo Shell Sort: 489453 microsegundos
-Tempo Comb Sort:  388356 microsegundos
+Tempo Shell Sort:  488245 us
+Tempo Comb Sort:   709182 us
 Memoria utilizada: 11718 KB
 
 10^6 - crescente
-Tempo Shell Sort: 46063 microsegundos
-Tempo Comb Sort:  97366 microsegundos
+Tempo Shell Sort:  89680 us
+Tempo Comb Sort:   206696 us
 Memoria utilizada: 11718 KB
 
 10^6 - decrescente
-Tempo Shell Sort: 76527 microsegundos
-Tempo Comb Sort:  121494 microsegundos
+Tempo Shell Sort:  88387 us
+Tempo Comb Sort:   179300 us
 Memoria utilizada: 11718 KB
