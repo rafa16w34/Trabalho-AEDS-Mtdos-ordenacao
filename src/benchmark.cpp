@@ -62,6 +62,19 @@ void Benchmark::liberar() {
     original = shellDados = combDados = nullptr;
 }
 
+long long Benchmark::getMemoriaKB() {
+    ifstream status("/proc/self/status");
+    string linha;
+    while (getline(status, linha)) {
+        if (linha.rfind("VmRSS:", 0) == 0) {
+            long long kb;
+            sscanf(linha.c_str(), "VmRSS: %lld", &kb);
+            return kb;
+        }
+    }
+    return 0;
+}
+
 Benchmark::Benchmark(int loop)
     : original(nullptr), shellDados(nullptr), combDados(nullptr),
       n(0), loop(loop), tempoShell(0), tempoComb(0), memoriaBytes(0) {}
@@ -94,22 +107,35 @@ void Benchmark::executar() {
     ShellSort shell(shellDados, n);
     CombSort  comb(combDados, n);
 
+    // Shell Sort
+    long long mem0 = getMemoriaKB();
     auto t0 = high_resolution_clock::now();
     shell.ordenar();
     auto t1 = high_resolution_clock::now();
+    long long mem1 = getMemoriaKB();
 
+    tempoShell   = duration_cast<microseconds>(t1 - t0).count();
+    memoriaShell = mem1 - mem0;
+
+    // Comb Sort
+    long long mem2 = getMemoriaKB();
     auto t2 = high_resolution_clock::now();
     comb.ordenar();
     auto t3 = high_resolution_clock::now();
+    long long mem3 = getMemoriaKB();
 
-    tempoShell = duration_cast<microseconds>(t1 - t0).count();
-    tempoComb  = duration_cast<microseconds>(t3 - t2).count();
+    tempoComb   = duration_cast<microseconds>(t3 - t2).count();
+    memoriaComb = mem3 - mem2;
 }
+
+
 
 void Benchmark::salvar() {
     ofstream arq("output.dat", ios::app);
     arq << "\n" << getTitulo() << "\n";
     arq << "Tempo Shell Sort:  " << tempoShell  << " us\n";
     arq << "Tempo Comb Sort:   " << tempoComb   << " us\n";
-    arq << "Memoria utilizada: " << memoriaBytes / 1024 << " KB\n";
+    arq << "Memoria Shell Sort: " << memoriaShell << " KB\n";
+    arq << "Memoria Comb Sort:  " << memoriaComb  << " KB\n";  
+    arq << "Memoria utilizada pelos objetos: " << memoriaBytes / 1024 << " KB\n";
 }

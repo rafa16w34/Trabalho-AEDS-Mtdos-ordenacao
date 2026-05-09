@@ -1,75 +1,105 @@
 
 10^2 - random
-Tempo Shell Sort:  14 us
-Tempo Comb Sort:   18 us
-Memoria utilizada: 1 KB
+Tempo Shell Sort:  15 us
+Tempo Comb Sort:   20 us
+Memoria Shell Sort: 256 KB
+Memoria Comb Sort:  0 KB
+Memoria utilizada pelos objetos: 1 KB
 
 10^2 - crescente
 Tempo Shell Sort:  3 us
 Tempo Comb Sort:   6 us
-Memoria utilizada: 1 KB
+Memoria Shell Sort: 0 KB
+Memoria Comb Sort:  0 KB
+Memoria utilizada pelos objetos: 1 KB
 
 10^2 - decrescente
 Tempo Shell Sort:  6 us
 Tempo Comb Sort:   11 us
-Memoria utilizada: 1 KB
+Memoria Shell Sort: 0 KB
+Memoria Comb Sort:  0 KB
+Memoria utilizada pelos objetos: 1 KB
 
 10^3 - random
-Tempo Shell Sort:  252 us
-Tempo Comb Sort:   304 us
-Memoria utilizada: 11 KB
+Tempo Shell Sort:  229 us
+Tempo Comb Sort:   334 us
+Memoria Shell Sort: 0 KB
+Memoria Comb Sort:  0 KB
+Memoria utilizada pelos objetos: 11 KB
 
 10^3 - crescente
 Tempo Shell Sort:  44 us
 Tempo Comb Sort:   101 us
-Memoria utilizada: 11 KB
+Memoria Shell Sort: 0 KB
+Memoria Comb Sort:  0 KB
+Memoria utilizada pelos objetos: 11 KB
 
 10^3 - decrescente
-Tempo Shell Sort:  71 us
-Tempo Comb Sort:   121 us
-Memoria utilizada: 11 KB
+Tempo Shell Sort:  78 us
+Tempo Comb Sort:   166 us
+Memoria Shell Sort: 0 KB
+Memoria Comb Sort:  0 KB
+Memoria utilizada pelos objetos: 11 KB
 
 10^4 - random
-Tempo Shell Sort:  3552 us
-Tempo Comb Sort:   4121 us
-Memoria utilizada: 117 KB
+Tempo Shell Sort:  3800 us
+Tempo Comb Sort:   5531 us
+Memoria Shell Sort: 0 KB
+Memoria Comb Sort:  0 KB
+Memoria utilizada pelos objetos: 117 KB
 
 10^4 - crescente
-Tempo Shell Sort:  483 us
-Tempo Comb Sort:   1011 us
-Memoria utilizada: 117 KB
+Tempo Shell Sort:  729 us
+Tempo Comb Sort:   1820 us
+Memoria Shell Sort: 0 KB
+Memoria Comb Sort:  0 KB
+Memoria utilizada pelos objetos: 117 KB
 
 10^4 - decrescente
-Tempo Shell Sort:  989 us
-Tempo Comb Sort:   1744 us
-Memoria utilizada: 117 KB
+Tempo Shell Sort:  1472 us
+Tempo Comb Sort:   2883 us
+Memoria Shell Sort: 0 KB
+Memoria Comb Sort:  0 KB
+Memoria utilizada pelos objetos: 117 KB
 
 10^5 - random
-Tempo Shell Sort:  61662 us
-Tempo Comb Sort:   42873 us
-Memoria utilizada: 1171 KB
+Tempo Shell Sort:  55759 us
+Tempo Comb Sort:   73314 us
+Memoria Shell Sort: 0 KB
+Memoria Comb Sort:  0 KB
+Memoria utilizada pelos objetos: 1171 KB
 
 10^5 - crescente
-Tempo Shell Sort:  4205 us
-Tempo Comb Sort:   9737 us
-Memoria utilizada: 1171 KB
+Tempo Shell Sort:  7658 us
+Tempo Comb Sort:   16849 us
+Memoria Shell Sort: 0 KB
+Memoria Comb Sort:  0 KB
+Memoria utilizada pelos objetos: 1171 KB
 
 10^5 - decrescente
-Tempo Shell Sort:  7260 us
-Tempo Comb Sort:   16814 us
-Memoria utilizada: 1171 KB
+Tempo Shell Sort:  10115 us
+Tempo Comb Sort:   17416 us
+Memoria Shell Sort: 0 KB
+Memoria Comb Sort:  0 KB
+Memoria utilizada pelos objetos: 1171 KB
 
 10^6 - random
-Tempo Shell Sort:  488245 us
-Tempo Comb Sort:   709182 us
-Memoria utilizada: 11718 KB
+Tempo Shell Sort:  638505 us
+Tempo Comb Sort:   831981 us
+Memoria Shell Sort: 0 KB
+Memoria Comb Sort:  0 KB
+Memoria utilizada pelos objetos: 11718 KB
 
 10^6 - crescente
-Tempo Shell Sort:  89680 us
-Tempo Comb Sort:   206696 us
-Memoria utilizada: 11718 KB
+Tempo Shell Sort:  106379 us
+Tempo Comb Sort:   164780 us
+Memoria Shell Sort: 0 KB
+Memoria Comb Sort:  0 KB
+Memoria utilizada pelos objetos: 11718 KB
 
 10^6 - decrescente
-Tempo Shell Sort:  88387 us
-Tempo Comb Sort:   179300 us
-Memoria utilizada: 11718 KB
+Tempo Shell Sort:  155901 us
+Tempo Comb Sort:   468653 us
+Memoria Shell Sort: 0 KB
+Memoria Comb Sort:  0 KB
+Memoria utilizada pelos objetos: 11718 KB
