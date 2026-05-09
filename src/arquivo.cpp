@@ -55,17 +55,47 @@ void limpaOutput(){
 
     if (!arquivo) {
         cout << "Erro ao abrir output.dat\n";
-        exit;
+        exit(1);
     }
 
     arquivo.close();
 
 }
 
+//------------------------------------------------------------------------------------
+
+int contarElementos(int loop) {
+    string nome;
+
+    if      (loop == 0)  nome = "config/input_random_10^2.dat";
+    else if (loop == 1)  nome = "config/input_crescente_10^2.dat";
+    else if (loop == 2)  nome = "config/input_decrescente_10^2.dat";
+    else if (loop == 3)  nome = "config/input_random_10^3.dat";
+    else if (loop == 4)  nome = "config/input_crescente_10^3.dat";
+    else if (loop == 5)  nome = "config/input_decrescente_10^3.dat";
+    else if (loop == 6)  nome = "config/input_random_10^4.dat";
+    else if (loop == 7)  nome = "config/input_crescente_10^4.dat";
+    else if (loop == 8)  nome = "config/input_decrescente_10^4.dat";
+    else if (loop == 9)  nome = "config/input_random_10^5.dat";
+    else if (loop == 10) nome = "config/input_crescente_10^5.dat";
+    else if (loop == 11) nome = "config/input_decrescente_10^5.dat";
+    else if (loop == 12) nome = "config/input_random_10^6.dat";
+    else if (loop == 13) nome = "config/input_crescente_10^6.dat";
+    else if (loop == 14) nome = "config/input_decrescente_10^6.dat";
+    else {
+        cout << "Loop inválido: " << loop << "\n";
+        return 0;
+    }
+
+    ifstream arquivo(nome);
+    int count = 0, num;
+    while (arquivo >> num) count++;
+    return count;
+}
 
 //------------------------------------------------------------------------------------
 
-int escreverResultado(long long tempoShell, long long tempoComb, int loop) {
+int escreverResultado(long long tempoShell, long long tempoComb, int loop, long long memoriaBytes) {
 
     ofstream arquivo("output.dat", ios::app);
 
@@ -97,8 +127,9 @@ int escreverResultado(long long tempoShell, long long tempoComb, int loop) {
     }
 
     arquivo << "\n" << titulo << "\n";
-    arquivo << "Tempo Shell Sort: " << tempoShell << " ms\n";
-    arquivo << "Tempo Comb Sort:  " << tempoComb  << " ms\n";
+    arquivo << "Tempo Shell Sort: " << tempoShell << " microsegundos\n";
+    arquivo << "Tempo Comb Sort:  " << tempoComb  << " microsegundos\n";
+    arquivo << "Memoria utilizada: " << memoriaBytes / 1024 << " KB\n";
 
     arquivo.close();
     return 0;
