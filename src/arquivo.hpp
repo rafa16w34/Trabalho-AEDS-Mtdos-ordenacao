@@ -1,4 +1,5 @@
 #pragma once
 
-int lerArquivo(int dados[]);
-int escreverResultado(int dados[],long long tempoShell, long long tempoComb);
+int lerArquivo(int dados[], int loop);
+void limpaOutput();
+int escreverResultado(long long tempoShell, long long tempoComb,int loop);

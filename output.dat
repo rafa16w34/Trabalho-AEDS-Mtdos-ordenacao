@@ -1,2 +1,60 @@
-Tempo Shell Sort: 369 ms
-Tempo Comb Sort:  311 ms
+
+10^2 - random
+Tempo Shell Sort: 0 ms
+Tempo Comb Sort:  0 ms
+
+10^2 - crescente
+Tempo Shell Sort: 0 ms
+Tempo Comb Sort:  0 ms
+
+10^2 - decrescente
+Tempo Shell Sort: 0 ms
+Tempo Comb Sort:  0 ms
+
+10^3 - random
+Tempo Shell Sort: 0 ms
+Tempo Comb Sort:  0 ms
+
+10^3 - crescente
+Tempo Shell Sort: 0 ms
+Tempo Comb Sort:  0 ms
+
+10^3 - decrescente
+Tempo Shell Sort: 0 ms
+Tempo Comb Sort:  0 ms
+
+10^4 - random
+Tempo Shell Sort: 2 ms
+Tempo Comb Sort:  2 ms
+
+10^4 - crescente
+Tempo Shell Sort: 0 ms
+Tempo Comb Sort:  0 ms
+
+10^4 - decrescente
+Tempo Shell Sort: 0 ms
+Tempo Comb Sort:  0 ms
+
+10^5 - random
+Tempo Shell Sort: 32 ms
+Tempo Comb Sort:  33 ms
+
+10^5 - crescente
+Tempo Shell Sort: 2 ms
+Tempo Comb Sort:  3 ms
+
+10^5 - decrescente
+Tempo Shell Sort: 5 ms
+Tempo Comb Sort:  7 ms
+
+10^6 - random
+Tempo Shell Sort: 350 ms
+Tempo Comb Sort:  235 ms
+
+10^6 - crescente
+Tempo Shell Sort: 44 ms
+Tempo Comb Sort:  40 ms
+
+10^6 - decrescente
+Tempo Shell Sort: 43 ms
+Tempo Comb Sort:  79 ms
