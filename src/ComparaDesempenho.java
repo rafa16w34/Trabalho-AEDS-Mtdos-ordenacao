@@ -3,32 +3,43 @@ public class ComparaDesempenho {
 
         int[] numeros = GerenciaArquivos.ler(entrada);
         int tamanho = numeros.length;
-
-        // salva na subpasta output
-        String saidaShell = "data/output/output_shell_" + tipoDado + "_" + tamanho + ".dat";
-        String saidaComb = "data/output/output_comb_" + tipoDado + "_" + tamanho + ".dat";
+        long memObjetos = (tamanho * 4) / 1024;
 
         int[] dadosShell = numeros.clone();
         int[] dadosComb = numeros.clone();
 
-        // avaliação Shell Sort
+        Runtime runtime = Runtime.getRuntime();
+
+        runtime.gc(); // Limpa o lixo da leitura do arquivo
+        long memAntesShell = runtime.totalMemory() - runtime.freeMemory();
+
         long inicioShell = System.nanoTime();
         ShellSort.ordenar(dadosShell);
         long fimShell = System.nanoTime();
 
-        GerenciaArquivos.salvar(dadosShell, saidaShell);
-        double tempoShell = (fimShell - inicioShell) / 1_000_000_000.0;
+        long memDepoisShell = runtime.totalMemory() - runtime.freeMemory();
+        long memGastaShell = Math.max(0, (memDepoisShell - memAntesShell) / 1024);
 
-        // avaliação do Comb Sort
+        runtime.gc(); // Limpa qualquer lixo que o Shell tenha deixado
+        long memAntesComb = runtime.totalMemory() - runtime.freeMemory();
+
         long inicioComb = System.nanoTime();
         CombSort.ordenar(dadosComb);
         long fimComb = System.nanoTime();
 
-        GerenciaArquivos.salvar(dadosComb, saidaComb);
-        double tempoComb = (fimComb - inicioComb) / 1_000_000_000.0;
+        long memDepoisComb = runtime.totalMemory() - runtime.freeMemory();
+        long memGastaComb = Math.max(0, (memDepoisComb - memAntesComb) / 1024);
 
-        System.out.printf("| %-15s | %-10d | %-15.6f | %-15.6f |\n", tipoDado, tamanho, tempoShell, tempoComb);
+        double tempoShell = (fimShell - inicioShell) / 1000.0;
+        double tempoComb = (fimComb - inicioComb) / 1000.0;
 
-        return String.format("%-15s %-10d %-15.6f %-15.6f", tipoDado, tamanho, tempoShell, tempoComb);
+        System.out.println(tamanho + " - " + tipoDado);
+        System.out.printf("Tempo Shell Sort:  %.0f us\n", tempoShell);
+        System.out.printf("Tempo Comb Sort:   %.0f us\n", tempoComb);
+        System.out.println("Memoria Shell Sort: " + memGastaShell + " KB");
+        System.out.println("Memoria Comb Sort:  " + memGastaComb + " KB");
+        System.out.println("Memoria utilizada pelos objetos: " + memObjetos + " KB\n");
+
+        return String.format("%-15s %-10d %-15.0f %-15.0f %-10d", tipoDado, tamanho, tempoShell, tempoComb, memObjetos);
     }
 }
