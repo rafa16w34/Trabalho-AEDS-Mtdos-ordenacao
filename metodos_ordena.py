@@ -139,14 +139,14 @@ for nome_arquivo in arquivos:
 
     # Mede Shell Sort
     t_shell, mem_shell = medir(shellSort, dados)
-    print(f"Shell Sort [{nome_base}]: {formatar_tempo(t_shell)}")
+    print(f"Shell Sort [{nome_base}]: {formatar_tempo(t_shell)} | Mem: {formatar_mem(mem_shell)}")
 
     saida_shell = f"dados/Saida/{pasta_saida}/output_Shell_Sort_{nome_base}.dat"
     escrever_saida(saida_shell, "Shell Sort", sorted(dados), t_shell)
 
     # Mede Comb Sort
     t_comb, mem_comb = medir(combSort, dados)
-    print(f"Comb Sort  [{nome_base}]: {formatar_tempo(t_comb)}")
+    print(f"Comb Sort  [{nome_base}]: {formatar_tempo(t_comb)} | Mem: {formatar_mem(mem_comb)}")
 
     saida_comb = f"dados/Saida/{pasta_saida}/output_Comb_Sort_{nome_base}.dat"
     escrever_saida(saida_comb, "Comb Sort", sorted(dados), t_comb)
