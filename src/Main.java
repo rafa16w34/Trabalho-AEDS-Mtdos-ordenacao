@@ -9,11 +9,6 @@ public class Main {
         PrintWriter escritor = new PrintWriter(new File("data/resultados.dat"));
 
         escritor.println("TIPO         TAMANHO    SHELL_SORT(s)   COMB_SORT(s)");
-
-        System.out.println("+-----------------+------------+-----------------+-----------------+");
-        System.out.println("| Cenário         | Tamanho    | Shell Sort (s)  | Comb Sort (s)   |");
-        System.out.println("+-----------------+------------+-----------------+-----------------+");
-
         String[] arquivosAleatorios = {
                 "data/input/input_random_10^2.dat",
                 "data/input/input_random_10^3.dat",
