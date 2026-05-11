@@ -1,164 +1,159 @@
-# Trabalho-AEDS-Mtdos-ordenacao-Shell Sort e Comb Sort em Python 
-Trabalho em grupo sobre metodos de ordenação:
+# Algoritmos de Ordenação — Shell Sort & Comb Sort
 
-Implementação e análise experimental dos algoritmos **Shell Sort** e **Comb Sort** em Python, com medição de tempo de execução e consumo de memória para diferentes tamanhos e distribuições de entrada.
+> Trabalho desenvolvido para a disciplina de **Algoritmos e Estruturas de Dados I (A.E.D.S.I)**  
+> CEFET-MG, Campus V — Divinópolis, Brasil
 
----
-
-## Estrutura do Projeto
-
-```
-Trabalho2AEDSI_Python/
-├── metodos_ordena.py          # Script principal
-├── Makefile                   # Automação de execução e limpeza
-└── dados/
-    ├── Entrada/               # Arquivos de entrada (.dat)
-    │   ├── input_crescente_10^2.dat
-    │   ├── input_crescente_10^3.dat
-    │   ├── input_crescente_10^4.dat
-    │   ├── input_crescente_10^5.dat
-    │   ├── input_crescente_10^6.dat
-    │   ├── input_decrescente_10^2.dat  ... (10^6)
-    │   └── input_random_10^2.dat       ... (10^6)
-    └── Saida/
-        ├── Crescente/         # Outputs das entradas crescentes
-        ├── Decrescente/       # Outputs das entradas decrescentes
-        ├── Desordenado-Ordenado/  # Outputs das entradas aleatórias
-        └── log_memoria.dat    # Log de tempo e memória por execução
-```
+Análise teórica e experimental dos algoritmos **Shell Sort** e **Comb Sort**, implementados em cinco linguagens de programação, avaliados sobre entradas de diferentes tamanhos e distribuições.
 
 ---
 
-## Requisitos
+## Autores
 
-- Python 3.8 ou superior
-- Nenhuma dependência externa — apenas bibliotecas padrão (`math`, `time`, `os`, `tracemalloc`, `sys`)
+| Nome                                  | E-mail                          |
+| ------------------------------------- | ------------------------------- |
+| Gabriel Alves Faria                   | gabrielalvesfaria@gmail.com     |
+| Rafael Alves Faria                    | rafael16alvesf@gmail.com        |
+| Anthony Gabriel Sotto Mayor Silva     | anthonygabrielsotto29@gmail.com |
+| Henrique Parreira Cavalcante de Souza | henriqueparreira2007@gmail.com  |
+
+---
+
+## Sobre o Projeto
+
+Os algoritmos Shell Sort e Comb Sort são refinamentos, respectivamente, do Insertion Sort e do Bubble Sort. Ambos utilizam a estratégia de comparações em intervalos maiores (gap variável) antes dos ajustes finais, tornando-os especialmente eficientes para grandes volumes de dados.
+
+Este repositório contém as implementações em **C**, **C++**, **Java**, **Python** e **Go**, com experimentos conduzidos sobre permutações de inteiros no intervalo `[1, N]`, com tamanhos `N ∈ {10², 10³, 10⁴, 10⁵, 10⁶}` e três tipos de distribuição: **aleatória**, **crescente** e **decrescente**.
+
+---
+
+## Estrutura do Repositório
+
+```
+.
+├── C/
+│   ├── shell.c
+│   ├── comb.c
+│   └── main.c
+├── C++/
+|   ├── config/                 # Arquivos de entrada dos testes
+|   ├── src/
+|   │   ├── main.cpp            # Programa principal
+|   │   ├── benchmark.cpp       # Benchmark e coleta de métricas
+|   │   ├── arquivo.cpp         # Manipulação de arquivos
+|   │   ├── shellSort.cpp       # Implementação do Shell Sort
+|   │   ├── combSort.cpp        # Implementação do Comb Sort
+|   │   └── sort.cpp            # Funções auxiliares de ordenação
+|   │
+|   ├── Makefile                # Automação da compilação
+|   ├── output.dat              # Resultados dos testes
+├── Java/
+│   └── *.java
+├── Python/
+|     ├── metodos_ordena.py          # Script principal
+|     ├── Makefile                   # Automação de execução e limpeza
+|     └── dados/
+|          ├── Entrada/               # Arquivos de entrada (.dat)
+|          └── Saida/                 # Arquivos de saida (.dat)
+|
+└── Go/
+    ├── shell_sort.go
+    └── comb_sort.go
+```
 
 ---
 
 ## Como Executar
 
-### Com Makefile (Linux)
+### C++
+
+Utiliza Makefile para compilação e execução:
 
 ```bash
-# Executa o script (cria as pastas de saída automaticamente)
+make clean && make && make build
+```
+
+### Java
+
+Compilar todos os arquivos `.java` do diretório:
+
+```bash
+javac *.java
+java Main
+```
+
+### Python
+
+Utiliza Makefile para execução:
+
+```bash
 make
-
-# Ou explicitamente
-make run
-
-# Remove todos os arquivos de saída gerados
-make clean
-
-# Exibe os alvos disponíveis
-make help
 ```
 
-### Sem Makefile
+### C
 
-```bash
-# A partir da raiz do projeto
-python3 metodos_ordena.py
-```
+> ⚠️ Instruções de execução a confirmar — seção em atualização.
 
-Os arquivos de saída serão gerados automaticamente em `dados/Saida/`.
+### Go
 
----
-
-## Entradas
-
-Cada arquivo de entrada contém uma sequência de inteiros, um por linha, em três distribuições:
-
-| Distribuição | Arquivos |
-|---|---|
-| Crescente | `input_crescente_10^2.dat` até `input_crescente_10^6.dat` |
-| Decrescente | `input_decrescente_10^2.dat` até `input_decrescente_10^6.dat` |
-| Aleatória | `input_random_10^2.dat` até `input_random_10^6.dat` |
+> ⚠️ Instruções de execução a confirmar — seção em atualização.
 
 ---
 
-## Saídas
+## Detalhes dos Algoritmos
 
-Para cada arquivo de entrada, são gerados dois arquivos de saída — um para cada algoritmo — com o seguinte formato:
+### Shell Sort
 
-```
-- Ordenacao Shell Sort:
-- Tempo: 0.2274 segundos
-- Total de elementos: 100000
+- Refinamento do Insertion Sort proposto por Donald Shell em 1959
+- Utiliza a **sequência de Knuth** (`h = h * 3 + 1`) para geração dos gaps
+- Complexidades com sequência de Knuth:
+  - Melhor caso: `O(n log n)`
+  - Caso médio: `O(n^(3/2))` (estimativa empírica)
+  - Pior caso: `O(n^(3/2))`
+- In-place (`O(1)` de memória auxiliar), **não estável**, **adaptativo**
 
-[elementos ordenados, um por linha]
-```
+### Comb Sort
 
-O arquivo `dados/Saida/log_memoria.dat` consolida o tempo e o pico de memória auxiliar de cada execução.
-
----
-
-## Detalhes de Implementação
-
-### Estrutura de dados
-
-Utilizou-se a estrutura de lista nativa (`list`) do Python para o armazenamento dos elementos. Listas em Python são estruturas dinâmicas gerenciadas internamente como arrays de referências, que permitem acesso indexado em O(1) e troca direta de elementos — comportamento suficiente para algoritmos que operam exclusivamente por comparação e troca de posições.
-
-### Medição de tempo
-
-O tempo de execução é medido com `time.perf_counter()`, que oferece maior resolução temporal do que `time.time()`, sendo recomendado para medições de curta duração. A captura ocorre imediatamente antes e após a chamada ao algoritmo, excluindo leitura de arquivo e escrita dos resultados.
-
-### Medição de memória
-
-O consumo de memória auxiliar é mensurado via `tracemalloc`, capturando o pico de alocação exclusivamente durante a execução de cada algoritmo. A memória total do processo é capturada ao final de todas as execuções.
-
-### Sequência de gaps — Shell Sort
-
-Adotou-se a **sequência de Knuth (1973)**: gaps da forma (3^k − 1)/2, ou seja, 1, 4, 13, 40, 121, ... A sequência é calculada dinamicamente a partir do tamanho do vetor, encontrando o maior k tal que (3^k − 1)/2 < n, e decrementada a cada iteração até o gap final de valor 1.
-
-### Fator de redução — Comb Sort
-
-Adotou-se o fator de redução padrão de **1.3**, conforme proposto originalmente, que empiricamente apresenta bom desempenho na maioria das distribuições.
+- Refinamento do Bubble Sort proposto por Dobosiewicz (1980) e popularizado por Lacey & Box (1991)
+- Utiliza fator de encolhimento **1,3** (estabelecido após testes em mais de 200.000 listas)
+- Complexidades:
+  - Melhor caso: `O(n log n)`
+  - Caso médio: próximo de `O(n log n)` (empírico)
+  - Pior caso: `O(n²)`
+- In-place (`O(1)` de memória auxiliar), **não estável**, **adaptativo**
 
 ---
 
-## Resultados Experimentais
+## Resumo dos Resultados
 
-### Tempo de execução
+Os experimentos foram conduzidos em uma máquina com processador **Intel U300 (1,20 GHz)** e **8 GB de RAM**, rodando **Ubuntu 24.04 LTS via WSL**.
 
-| n | Entrada | Shell Sort | Comb Sort |
-|---|---|---|---|
-| 10² | Aleatória | 178 µs | 221 µs |
-| 10² | Crescente | 598 µs | 1 ms |
-| 10² | Decrescente | 141 µs | 184 µs |
-| 10³ | Aleatória | 20 ms | 10 ms |
-| 10³ | Crescente | 15 ms | 10 ms |
-| 10³ | Decrescente | 12 ms | 9 ms |
-| 10⁴ | Aleatória | 268 ms | 180 ms |
-| 10⁴ | Crescente | 91 ms | 261 ms |
-| 10⁴ | Decrescente | 58 ms | 154 ms |
-| 10⁵ | Aleatória | 1,422 s | 2,443 s |
-| 10⁵ | Crescente | 936 ms | 1,815 s |
-| 10⁵ | Decrescente | 690 ms | 1,709 s |
-| 10⁶ | Aleatória | 23,325 s | 35,819 s |
-| 10⁶ | Crescente | 6,533 s | 20,453 s |
-| 10⁶ | Decrescente | 8,600 s | 23,192 s |
+Ferramentas utilizadas: GCC 13.3 (C e C++), OpenJDK 21 (Java), Python 3.12, Go 1.22.
 
-### Memória ocupada pela lista de entrada
+### Desempenho para n = 10⁶ — Entrada Aleatória
 
-| n | Memória |
-|---|---|
-| 10² | 4 KB |
-| 10³ | 36 KB |
-| 10⁴ | 357 KB |
-| 10⁵ | 3.517 KB |
-| 10⁶ | 35.594 KB |
+| Linguagem | Shell Sort | Comb Sort |
+| --------- | ---------- | --------- |
+| C         | 0,1556 s   | 0,1396 s  |
+| C++       | ~0,342 s   | ~0,327 s  |
+| Java      | ~0,172 s   | ~0,115 s  |
+| Python    | ~103 s     | ~119 s    |
+| Go        | ~0,183 s   | ~0,179 s  |
 
-A memória auxiliar dos algoritmos retornou **0 KB** em todos os casos, confirmando a natureza in-place e complexidade de espaço O(1) de ambos.
+### Principais Conclusões
+
+- **Shell Sort** é superior em entradas pré-ordenadas (crescente/decrescente) graças à sua adaptatividade
+- **Comb Sort** supera o Shell Sort em entradas aleatórias de grande porte na maioria das linguagens (C, C++, Java, Go), pela eficiência na eliminação de _turtles_
+- **C e C++** oferecem o melhor desempenho bruto; **Go** compete diretamente com consumo de memória controlado
+- **Java** apresenta _warm-up_ do JIT nas primeiras execuções, mas rivaliza com C++ em instâncias massivas
+- **Python** registrou os maiores tempos devido ao overhead do interpretador CPython e à representação de inteiros como objetos no heap
 
 ---
 
-## Observações sobre Desempenho em Python
+## Referências
 
-Os tempos observados refletem características inerentes à linguagem:
-
-- **Linguagem interpretada**: o CPython executa via bytecode, acumulando overhead em laços intensos de comparação e troca.
-- **Tipagem dinâmica**: cada comparação `lista[i] > lista[j]` exige resolução de tipo em tempo de execução.
-- **Indireção de memória**: a `list` do Python não é um array contíguo de inteiros, mas uma sequência de ponteiros para objetos alocados dinamicamente no heap, com overhead de ~28 bytes por inteiro.
-
-Em n = 10⁶ aleatório, o Shell Sort levou 23,325 s e o Comb Sort 35,819 s. O crescimento geral permanece subquadrático, consistente com a complexidade de pior caso O(n^(3/2)) do Shell Sort com sequência de Knuth, confirmando que o gargalo é o custo por operação do interpretador, e não a complexidade assintótica dos algoritmos.
+1. SHELL, D. L. _A High-Speed Sorting Procedure_. Communications of the ACM, v. 2, n. 7, p. 30–32, 1959.
+2. LACEY, S.; BOX, R. _A Fast, Easy Sort_. Byte Magazine, v. 16, n. 4, p. 315–320, 1991.
+3. KNUTH, D. E. _The Art of Computer Programming, Vol. 3: Sorting and Searching_. Addison-Wesley, 1973.
+4. HIBBARD, T. N. _An Empirical Study of Minimal Storage Sorting_. Communications of the ACM, v. 6, n. 5, p. 206–213, 1963.
+5. CIURA, M. _Best Increments for the Average Case of Shellsort_. ISFCT 2001, Springer, p. 106–117.
+6. ZIVIANI, N. _Projeto de Algoritmos: com Implementações em Pascal e C_. 2. ed. Pioneira Thomson Learning, 2004.
