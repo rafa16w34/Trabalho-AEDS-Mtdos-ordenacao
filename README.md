@@ -9,12 +9,12 @@ Análise teórica e experimental dos algoritmos **Shell Sort** e **Comb Sort**, 
 
 ## Autores
 
-| Nome                                  | E-mail                          |
-| ------------------------------------- | ------------------------------- |
-| Gabriel Alves Faria                   | gabrielalvesfaria@gmail.com     |
-| Rafael Alves Faria                    | rafael16alvesf@gmail.com        |
-| Anthony Gabriel Sotto Mayor Silva     | anthonygabrielsotto29@gmail.com |
-| Henrique Parreira Cavalcante de Souza | henriqueparreira2007@gmail.com  |
+| Nome | E-mail |
+|---|---|
+| Gabriel Alves Faria | gabrielalvesfaria@gmail.com |
+| Rafael Alves Faria | rafael16alvesf@gmail.com |
+| Anthony Gabriel Sotto Mayor Silva | anthonygabrielsotto29@gmail.com |
+| Henrique Parreira Cavalcante de Souza | henriqueparreira2007@gmail.com |
 
 ---
 
@@ -137,28 +137,28 @@ Ferramentas utilizadas: GCC 13.3 (C e C++), OpenJDK 21 (Java), Python 3.12, Go 1
 ### Desempenho para n = 10⁶ — Entrada Aleatória
 
 | Linguagem | Shell Sort | Comb Sort |
-| --------- | ---------- | --------- |
-| C         | 0,1556 s   | 0,1396 s  |
-| C++       | ~0,342 s   | ~0,327 s  |
-| Java      | ~0,172 s   | ~0,115 s  |
-| Python    | ~103 s     | ~119 s    |
-| Go        | ~0,183 s   | ~0,179 s  |
+|---|---|---|
+| C | 0,1556 s | 0,1396 s |
+| C++ | ~0,342 s | ~0,327 s |
+| Java | ~0,172 s | ~0,115 s |
+| Python | ~103 s | ~119 s |
+| Go | ~0,183 s | ~0,179 s |
 
 ### Principais Conclusões
 
 - **Shell Sort** é superior em entradas pré-ordenadas (crescente/decrescente) graças à sua adaptatividade
-- **Comb Sort** supera o Shell Sort em entradas aleatórias de grande porte na maioria das linguagens (C, C++, Java, Go), pela eficiência na eliminação de _turtles_
+- **Comb Sort** supera o Shell Sort em entradas aleatórias de grande porte na maioria das linguagens (C, C++, Java, Go), pela eficiência na eliminação de *turtles*
 - **C e C++** oferecem o melhor desempenho bruto; **Go** compete diretamente com consumo de memória controlado
-- **Java** apresenta _warm-up_ do JIT nas primeiras execuções, mas rivaliza com C++ em instâncias massivas
+- **Java** apresenta *warm-up* do JIT nas primeiras execuções, mas rivaliza com C++ em instâncias massivas
 - **Python** registrou os maiores tempos devido ao overhead do interpretador CPython e à representação de inteiros como objetos no heap
 
 ---
 
 ## Referências
 
-1. SHELL, D. L. _A High-Speed Sorting Procedure_. Communications of the ACM, v. 2, n. 7, p. 30–32, 1959.
-2. LACEY, S.; BOX, R. _A Fast, Easy Sort_. Byte Magazine, v. 16, n. 4, p. 315–320, 1991.
-3. KNUTH, D. E. _The Art of Computer Programming, Vol. 3: Sorting and Searching_. Addison-Wesley, 1973.
-4. HIBBARD, T. N. _An Empirical Study of Minimal Storage Sorting_. Communications of the ACM, v. 6, n. 5, p. 206–213, 1963.
-5. CIURA, M. _Best Increments for the Average Case of Shellsort_. ISFCT 2001, Springer, p. 106–117.
-6. ZIVIANI, N. _Projeto de Algoritmos: com Implementações em Pascal e C_. 2. ed. Pioneira Thomson Learning, 2004.
+1. SHELL, D. L. *A High-Speed Sorting Procedure*. Communications of the ACM, v. 2, n. 7, p. 30–32, 1959.
+2. LACEY, S.; BOX, R. *A Fast, Easy Sort*. Byte Magazine, v. 16, n. 4, p. 315–320, 1991.
+3. KNUTH, D. E. *The Art of Computer Programming, Vol. 3: Sorting and Searching*. Addison-Wesley, 1973.
+4. HIBBARD, T. N. *An Empirical Study of Minimal Storage Sorting*. Communications of the ACM, v. 6, n. 5, p. 206–213, 1963.
+5. CIURA, M. *Best Increments for the Average Case of Shellsort*. ISFCT 2001, Springer, p. 106–117.
+6. ZIVIANI, N. *Projeto de Algoritmos: com Implementações em Pascal e C*. 2. ed. Pioneira Thomson Learning, 2004.
