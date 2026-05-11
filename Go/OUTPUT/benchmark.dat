@@ -1,0 +1,19 @@
+# Memoria = vetor de trabalho (in-place) + alocacoes internas medidas por TotalAlloc
+
+Input                                    | N          | Shell Tempo (s)    | Shell Mem (KB)     | Comb Tempo (s)     | Comb Mem (KB)     
+---------------------------------------------------------------------------------------------------------------------------------------
+input_crescente_10^2.dat                 | 100        | 0.000000           | 0                  | 0.000000           | 0                 
+input_crescente_10^3.dat                 | 1000       | 0.000000           | 7                  | 0.000000           | 7                 
+input_crescente_10^4.dat                 | 10000      | 0.000000           | 78                 | 0.000000           | 78                
+input_crescente_10^5.dat                 | 100000     | 0.003193           | 781                | 0.000000           | 781               
+input_crescente_10^6.dat                 | 1000000    | 0.016084           | 7812               | 0.033944           | 7812              
+input_decrescente_10^2.dat               | 100        | 0.000000           | 0                  | 0.000000           | 0                 
+input_decrescente_10^3.dat               | 1000       | 0.000000           | 7                  | 0.000000           | 7                 
+input_decrescente_10^4.dat               | 10000      | 0.000581           | 78                 | 0.000576           | 78                
+input_decrescente_10^5.dat               | 100000     | 0.001554           | 781                | 0.003136           | 781               
+input_decrescente_10^6.dat               | 1000000    | 0.022126           | 7812               | 0.036275           | 7812              
+input_random_10^2.dat                    | 100        | 0.000000           | 0                  | 0.000000           | 0                 
+input_random_10^3.dat                    | 1000       | 0.000000           | 7                  | 0.000000           | 7                 
+input_random_10^4.dat                    | 10000      | 0.000536           | 78                 | 0.001101           | 78                
+input_random_10^5.dat                    | 100000     | 0.009974           | 781                | 0.008465           | 781               
+input_random_10^6.dat                    | 1000000    | 0.139165           | 7812               | 0.118416           | 7812              

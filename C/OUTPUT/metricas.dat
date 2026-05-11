@@ -1,0 +1,17 @@
+Input                                    |            N |      Shell (s) |       Comb (s) |   Mem RSS (kB)
+-----------------------------------------+--------------+----------------+----------------+---------------
+input_crescente_10^2.dat                 |           99 |       0.000000 |       0.000000 |            N/A
+input_crescente_10^3.dat                 |          999 |       0.000000 |       0.000000 |            N/A
+input_crescente_10^4.dat                 |         9999 |       0.001000 |       0.000000 |            N/A
+input_crescente_10^5.dat                 |        99999 |       0.003000 |       0.008000 |            N/A
+input_crescente_10^6.dat                 |      1000000 |       0.040000 |       0.097000 |            N/A
+input_decrescente_10^2.dat               |           99 |       0.000000 |       0.000000 |            N/A
+input_decrescente_10^3.dat               |          999 |       0.000000 |       0.000000 |            N/A
+input_decrescente_10^4.dat               |         9999 |       0.000000 |       0.001000 |            N/A
+input_decrescente_10^5.dat               |        99999 |       0.005000 |       0.010000 |            N/A
+input_decrescente_10^6.dat               |      1000000 |       0.057000 |       0.114000 |            N/A
+input_random_10^2.dat                    |           99 |       0.000000 |       0.000000 |            N/A
+input_random_10^3.dat                    |          999 |       0.000000 |       0.000000 |            N/A
+input_random_10^4.dat                    |         9999 |       0.002000 |       0.002000 |            N/A
+input_random_10^5.dat                    |        99999 |       0.020000 |       0.019000 |            N/A
+input_random_10^6.dat                    |      1000000 |       0.285000 |       0.228000 |            N/A
