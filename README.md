@@ -125,7 +125,7 @@ make clean && make && make run
 ### Go
 
 ```bash
-go run
+go run "nome do arquivo"
 ```
 
 
