@@ -34,9 +34,16 @@ Este repositório contém as implementações em **C**, **C++**, **Java**, **Pyt
 ```
 .
 ├── C/
-│   ├── shell.c
-│   ├── comb.c
-│   └── main.c
+│   ├── INPUT/                     # Arquivos de entrada dos testes
+│   ├── OUTPUT/                    # Resultados gerados
+│   ├── main.c                     # Programa principal
+│   ├── shell.c                    # Implementação do Shell Sort
+│   ├── comb.c                     # Implementação do Comb Sort
+│   ├── shell.h                    # Definições do Shell Sort
+│   ├── comb.h                     # Definições do Comb Sort
+│   ├── Makefile                   # Automação da compilação
+│   └── programa                   # Executável gerado
+|
 ├── C++/
 |   ├── config/                 # Arquivos de entrada dos testes
 |   ├── src/
@@ -49,8 +56,13 @@ Este repositório contém as implementações em **C**, **C++**, **Java**, **Pyt
 |   │
 |   ├── Makefile                # Automação da compilação
 |   ├── output.dat              # Resultados dos testes
+|
 ├── Java/
-│   └── *.java
+│   ├── data/                      # Arquivos de entrada/saída
+│   ├── src/                       # Código-fonte Java
+│   ├── bin/                       # Arquivos compilados
+│   └── out/                       # Saídas geradas pela IDE
+|
 ├── Python/
 |     ├── metodos_ordena.py          # Script principal
 |     ├── Makefile                   # Automação de execução e limpeza
@@ -58,9 +70,13 @@ Este repositório contém as implementações em **C**, **C++**, **Java**, **Pyt
 |          ├── Entrada/               # Arquivos de entrada (.dat)
 |          └── Saida/                 # Arquivos de saida (.dat)
 |
-└── Go/
-    ├── shell_sort.go
-    └── comb_sort.go
+├── Go/
+│   ├── INPUT/                     # Arquivos de entrada
+│   ├── OUTPUT/                    # Resultados dos benchmarks
+│   ├── sorts/                     # Implementações dos algoritmos
+│   └── main.go                    # Programa principal
+│
+└── README.md
 ```
 
 ---
@@ -87,23 +103,30 @@ java -cp src Main
 ### Python
 
 Utiliza Makefile para execução:
-
-```bash Windows
+Windows
+```bash 
 python metodos_ordena.py
 ```
 
-
-```bash Linux
+Linux
+```bash 
 make clean && make && make run
 ```
 
 ### C
 
-> ⚠️ Instruções de execução a confirmar — seção em atualização.
+Utiliza Makefile para compilação e execução:
+
+```bash
+make clean && make && make run
+```
 
 ### Go
 
-> ⚠️ Instruções de execução a confirmar — seção em atualização.
+```bash
+go run
+```
+
 
 ---
 
