@@ -1,55 +1,156 @@
-# Trabalho-AEDS-Mtdos-ordenacao
-Trabalho em grupo sobre metodos de ordenação
+# Algoritmos de Ordenação — Shell Sort & Comb Sort
 
-## Relatório Rafael:
+> Trabalho desenvolvido para a disciplina de **Algoritmos e Estruturas de Dados I (A.E.D.S.I)**  
+> CEFET-MG, Campus V — Divinópolis, Brasil
 
-O desenvolvimento do projeto teve início com a implementação, em C++, do algoritmo de ordenação Shell Sort, juntamente com funções auxiliares para leitura de dados a partir de arquivos. Para validação inicial, foi utilizado um conjunto de dados contendo 10⁶ elementos, armazenados em um arquivo previamente gerado por inteligência artificial (GPT), composto por números inteiros de 1 a 10⁶ dispostos de forma aleatória.
+Análise teórica e experimental dos algoritmos **Shell Sort** e **Comb Sort**, implementados em cinco linguagens de programação, avaliados sobre entradas de diferentes tamanhos e distribuições.
 
-O código foi estruturado de forma modular, com separação das responsabilidades em diferentes arquivos, e posteriormente compilado em um executável (main.exe) por meio do terminal bash do Visual Studio Code.
+---
 
-Após a verificação da corretude da ordenação, foi implementada uma função responsável por escrever os dados ordenados em um arquivo de saída (output.dat). Paralelamente, foi incorporada a biblioteca <chrono>, com o objetivo de medir o tempo de execução do algoritmo. Nessa etapa, observou-se um tempo médio de aproximadamente 2,8 segundos para a ordenação completa, valor considerado elevado para a linguagem C++ e para o volume de dados utilizado.
+## Autores
 
-Diante disso, foi realizada uma análise da implementação, com foco na função de ordenação. Inicialmente, os valores de gap eram calculados utilizando a abordagem clássica gap=n/2, sendo sucessivamente reduzidos pela metade. Após pesquisa teórica, verificou-se que o desempenho do Shell Sort está diretamente relacionado à escolha da sequência de gaps, e que sequências mais eficientes podem ser obtidas a partir da fórmula:
+| Nome | E-mail |
+|---|---|
+| Gabriel Alves Faria | gabrielalvesfaria@gmail.com |
+| Rafael Alves Faria | rafael16alvesf@gmail.com |
+| Anthony Gabriel Sotto Mayor Silva | anthonygabrielsotto29@gmail.com |
+| Henrique Parreira Cavalcante de Souza | henriqueparreira2007@gmail.com |
 
-<div align="center">
+---
 
-<img width="227" height="97" alt="Image" src="https://github.com/user-attachments/assets/e73a30c2-9922-40ed-9b9b-b991c5dd51a1" />
+## Sobre o Projeto
 
-</div>
+Os algoritmos Shell Sort e Comb Sort são refinamentos, respectivamente, do Insertion Sort e do Bubble Sort. Ambos utilizam a estratégia de comparações em intervalos maiores (gap variável) antes dos ajustes finais, tornando-os especialmente eficientes para grandes volumes de dados.
 
-<div align="justify">
+Este repositório contém as implementações em **C**, **C++**, **Java**, **Python** e **Go**, com experimentos conduzidos sobre permutações de inteiros no intervalo `[1, N]`, com tamanhos `N ∈ {10², 10³, 10⁴, 10⁵, 10⁶}` e três tipos de distribuição: **aleatória**, **crescente** e **decrescente**.
 
-(Onde h representa o valor do gap e k o índice da sequência. Essa formulação corresponde à sequência proposta por Knuth, amplamente utilizada por apresentar melhor desempenho prático. *1)
+---
 
-A implementação dessa nova abordagem exigiu a reformulação da lógica de cálculo dos gaps. As primeiras tentativas apresentaram inconsistências, principalmente devido ao uso inadequado da função pow para gerar os valores da sequência e à combinação incorreta entre diferentes estratégias de redução do gap, como a mistura entre a sequência de Knuth e a divisão sucessiva por 2. Essas abordagens resultaram em uma sequência de gaps não ideal, prejudicando a eficiência do algoritmo, uma vez que não promoviam uma pré-ordenação adequada dos dados, aumentando o custo das etapas finais do processo.
+## Estrutura do Repositório
 
-Diante dessas limitações, foi adotada uma implementação baseada integralmente na sequência de Knuth, na qual os gaps são gerados iterativamente pela relação h=3h+1 até o maior valor válido menor que n/3, e posteriormente percorridos de forma decrescente pela relação inversa h=(h−1)/3. Essa abordagem apresenta vantagens importantes, como a eliminação do uso de operações com ponto flutuante, a adaptação dinâmica ao tamanho do vetor e, principalmente, uma melhor distribuição dos elementos ao longo das iterações, o que reduz significativamente o trabalho necessário nas etapas finais do algoritmo (equivalentes a um insertion sort com gap=1).
+```
+.
+├── C/
+│   ├── shell.c
+│   ├── comb.c
+│   └── main.c
+├── C++/
+|   ├── config/                 # Arquivos de entrada dos testes
+|   ├── src/
+|   │   ├── main.cpp            # Programa principal
+|   │   ├── benchmark.cpp       # Benchmark e coleta de métricas
+|   │   ├── arquivo.cpp         # Manipulação de arquivos
+|   │   ├── shellSort.cpp       # Implementação do Shell Sort
+|   │   ├── combSort.cpp        # Implementação do Comb Sort
+|   │   └── sort.cpp            # Funções auxiliares de ordenação
+|   │
+|   ├── Makefile                # Automação da compilação
+|   ├── output.dat              # Resultados dos testes
+├── Java/
+│   └── *.java
+├── Python/
+│   ├── shell_sort.py
+│   ├── comb_sort.py
+│   └── Makefile
+└── Go/
+    ├── shell_sort.go
+    └── comb_sort.go
+```
 
-Apesar da adoção dessa estratégia mais eficiente e da melhoria na organização dos dados durante o processo de ordenação, o tempo de execução ainda se mostrava insatisfatório, mantendo-se em torno de 2 segundos em diferentes execuções.
+---
 
-Posteriormente, foi identificado que a operação de escrita em arquivo (output.dat) introduzia um custo significativo ao tempo total de execução, uma vez que operações de entrada e saída (I/O) possuem custo elevado quando comparadas a operações em memória. Considerando que o objetivo principal do experimento era avaliar o desempenho do algoritmo de ordenação, e que sua correção já havia sido validada, optou-se pela remoção da função de escrita de dados.
+## Como Executar
 
-Com essa modificação, observou-se uma melhora expressiva no desempenho, com o tempo de execução reduzido para aproximadamente 0,8 segundos, representando uma diminuição superior a 70% em relação à versão inicial.
+### C++
 
-Posteriormente, optei por manter a escrita dos dados no arquivo de saída (output.dat). No entanto, diferentemente da abordagem inicial, o tempo de execução passou a ser medido apenas até o término da ordenação, ou seja, o contador é finalizado antes da chamada da função de escrita. Dessa forma, a operação de saída não interfere na análise de desempenho do algoritmo Shell Sort.
+Utiliza Makefile para compilação e execução:
 
-Além disso, o início da medição de tempo foi ajustado para ocorrer somente após a leitura completa do arquivo de entrada, garantindo que a função de leitura também não impactasse os resultados obtidos. Para aumentar a confiabilidade dos testes, as execuções passaram a ser realizadas com o mínimo de processos em segundo plano, mantendo apenas a IDE aberta, de modo a reduzir o consumo de CPU e memória por outros aplicativos.
-Com essas melhorias metodológicas, o tempo de execução do Shell Sort apresentou uma redução adicional de aproximadamente 60%, passando de cerca de 0,8 segundos para 0,6 segundos.
+```bash
+make clean && make && make build
+```
 
-Após a estabilização e validação do Shell Sort, iniciou-se a implementação do algoritmo Comb Sort. Paralelamente, foram criadas funções auxiliares para iniciar e encerrar a medição de tempo, com o objetivo de tornar o fluxo do programa mais organizado e reutilizável.
-Durante a compilação, foi identificado um erro relacionado ao uso do tipo auto em parâmetros de função, recurso disponível apenas a partir do padrão C++20. Para contornar essa limitação, o código passou a ser compilado com a flag:
+### Java
 
-<div align="center">
+Compilar todos os arquivos `.java` do diretório:
 
-```g++ -std=c++20 src/*.cpp -o main```
+```bash
+javac *.java
+java Main
+```
 
-</div>
+### Python
 
-<div align="justify">
+Utiliza Makefile para execução:
 
-Após essas modificações, foi possível obter os tempos de execução do Comb Sort. Os resultados indicaram um tempo médio de aproximadamente 0,68 segundos, ligeiramente inferior ao do Shell Sort. Especificamente, o Shell Sort apresentou tempo médio de 693 milissegundos, enquanto o Comb Sort obteve 678,8 milissegundos, configurando uma diferença de poucos milissegundos, porém consistente em múltiplas execuções.
+```bash
+make
+```
 
-##
+### C
 
-*1 : https://www.youtube.com/watch?v=N5flk53THTo&t=638s
+> ⚠️ Instruções de execução a confirmar — seção em atualização.
 
+### Go
+
+> ⚠️ Instruções de execução a confirmar — seção em atualização.
+
+---
+
+## Detalhes dos Algoritmos
+
+### Shell Sort
+
+- Refinamento do Insertion Sort proposto por Donald Shell em 1959
+- Utiliza a **sequência de Knuth** (`h = h * 3 + 1`) para geração dos gaps
+- Complexidades com sequência de Knuth:
+  - Melhor caso: `O(n log n)`
+  - Caso médio: `O(n^(3/2))` (estimativa empírica)
+  - Pior caso: `O(n^(3/2))`
+- In-place (`O(1)` de memória auxiliar), **não estável**, **adaptativo**
+
+### Comb Sort
+
+- Refinamento do Bubble Sort proposto por Dobosiewicz (1980) e popularizado por Lacey & Box (1991)
+- Utiliza fator de encolhimento **1,3** (estabelecido após testes em mais de 200.000 listas)
+- Complexidades:
+  - Melhor caso: `O(n log n)`
+  - Caso médio: próximo de `O(n log n)` (empírico)
+  - Pior caso: `O(n²)`
+- In-place (`O(1)` de memória auxiliar), **não estável**, **adaptativo**
+
+---
+
+## Resumo dos Resultados
+
+Os experimentos foram conduzidos em uma máquina com processador **Intel U300 (1,20 GHz)** e **8 GB de RAM**, rodando **Ubuntu 24.04 LTS via WSL**.
+
+Ferramentas utilizadas: GCC 13.3 (C e C++), OpenJDK 21 (Java), Python 3.12, Go 1.22.
+
+### Desempenho para n = 10⁶ — Entrada Aleatória
+
+| Linguagem | Shell Sort | Comb Sort |
+|---|---|---|
+| C | 0,1556 s | 0,1396 s |
+| C++ | ~0,342 s | ~0,327 s |
+| Java | ~0,172 s | ~0,115 s |
+| Python | ~103 s | ~119 s |
+| Go | ~0,183 s | ~0,179 s |
+
+### Principais Conclusões
+
+- **Shell Sort** é superior em entradas pré-ordenadas (crescente/decrescente) graças à sua adaptatividade
+- **Comb Sort** supera o Shell Sort em entradas aleatórias de grande porte na maioria das linguagens (C, C++, Java, Go), pela eficiência na eliminação de *turtles*
+- **C e C++** oferecem o melhor desempenho bruto; **Go** compete diretamente com consumo de memória controlado
+- **Java** apresenta *warm-up* do JIT nas primeiras execuções, mas rivaliza com C++ em instâncias massivas
+- **Python** registrou os maiores tempos devido ao overhead do interpretador CPython e à representação de inteiros como objetos no heap
+
+---
+
+## Referências
+
+1. SHELL, D. L. *A High-Speed Sorting Procedure*. Communications of the ACM, v. 2, n. 7, p. 30–32, 1959.
+2. LACEY, S.; BOX, R. *A Fast, Easy Sort*. Byte Magazine, v. 16, n. 4, p. 315–320, 1991.
+3. KNUTH, D. E. *The Art of Computer Programming, Vol. 3: Sorting and Searching*. Addison-Wesley, 1973.
+4. HIBBARD, T. N. *An Empirical Study of Minimal Storage Sorting*. Communications of the ACM, v. 6, n. 5, p. 206–213, 1963.
+5. CIURA, M. *Best Increments for the Average Case of Shellsort*. ISFCT 2001, Springer, p. 106–117.
+6. ZIVIANI, N. *Projeto de Algoritmos: com Implementações em Pascal e C*. 2. ed. Pioneira Thomson Learning, 2004.
