@@ -49,9 +49,12 @@ Este repositório contém as implementações em **C**, **C++**, **Java**, **Pyt
 ├── Java/
 │   └── *.java
 ├── Python/
-│   ├── shell_sort.py
-│   ├── comb_sort.py
-│   └── Makefile
+|     ├── metodos_ordena.py          # Script principal
+|     ├── Makefile                   # Automação de execução e limpeza
+|     └── dados/
+|          ├── Entrada/               # Arquivos de entrada (.dat)
+|          └── Saida/                 # Arquivos de saida (.dat)
+|
 └── Go/
     ├── shell_sort.go
     └── comb_sort.go
@@ -66,7 +69,7 @@ Este repositório contém as implementações em **C**, **C++**, **Java**, **Pyt
 Utiliza Makefile para compilação e execução:
 
 ```bash
-make clean && make && make build
+make clean && make && make run
 ```
 
 ### Java
@@ -82,8 +85,13 @@ java Main
 
 Utiliza Makefile para execução:
 
-```bash
-make
+```bash Windows
+python metodos_ordena.py
+```
+
+
+```bash Linux
+make clean && make && make run
 ```
 
 ### C
