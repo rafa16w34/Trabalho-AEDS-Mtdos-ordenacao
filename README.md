@@ -77,8 +77,8 @@ make clean && make && make run
 Compilar todos os arquivos `.java` do diretório:
 
 ```bash
-javac *.java
-java Main
+javac src/*.java
+java -cp src Main
 ```
 
 ### Python
