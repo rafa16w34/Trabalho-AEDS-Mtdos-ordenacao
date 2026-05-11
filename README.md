@@ -103,6 +103,7 @@ java -cp src Main
 ### Python
 
 Utiliza Makefile para execução:
+
 Windows
 ```bash 
 python metodos_ordena.py
