@@ -1,0 +1,16 @@
+TIPO         TAMANHO    SHELL_SORT(s)   COMB_SORT(s)
+Aleatorio       100        8600            8441            0         
+Aleatorio       1000       374             796             3         
+Aleatorio       10000      3134            3333            39        
+Aleatorio       100000     12230           8889            390       
+Aleatorio       1000000    191822          107276          3906      
+Crescente       100        5               4               0         
+Crescente       1000       15              15              3         
+Crescente       10000      123             63              39        
+Crescente       100000     820             1070            390       
+Crescente       1000000    10561           12630           3906      
+Decrescente     100        6               12              0         
+Decrescente     1000       26              28              3         
+Decrescente     10000      213             212             39        
+Decrescente     100000     1178            1257            390       
+Decrescente     1000000    12060           14787           3906      
