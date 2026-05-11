@@ -103,8 +103,13 @@ int main(void) {
 
         /* lê dados */
         for (int i = 0; i < n; i++)
-            fscanf(arq, "%d", &vet[i]);
+            if (fscanf(arq, "%d", &vet[i]) != 1) {
+                printf("Erro ao ler arquivo\n");
+                return 1;
+}
         fclose(arq);
+
+        
 
         /* copia para os vetores de ordenação */
         memcpy(vetshell, vet, n * sizeof(int));
