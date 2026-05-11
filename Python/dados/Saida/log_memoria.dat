@@ -1,0 +1,105 @@
+10^2 - random
+Tempo Shell Sort:  167 us
+Tempo Comb Sort:   212 us
+Memoria Shell Sort: 0 KB
+Memoria Comb Sort:  0 KB
+Memoria utilizada da lista de entrada: 4 KB
+
+10^2 - crescente
+Tempo Shell Sort:  850 us
+Tempo Comb Sort:   182 us
+Memoria Shell Sort: 0 KB
+Memoria Comb Sort:  0 KB
+Memoria utilizada da lista de entrada: 4 KB
+
+10^2 - decrescente
+Tempo Shell Sort:  158 us
+Tempo Comb Sort:   186 us
+Memoria Shell Sort: 0 KB
+Memoria Comb Sort:  0 KB
+Memoria utilizada da lista de entrada: 4 KB
+
+10^3 - random
+Tempo Shell Sort:  19 ms
+Tempo Comb Sort:   11 ms
+Memoria Shell Sort: 0 KB
+Memoria Comb Sort:  0 KB
+Memoria utilizada da lista de entrada: 36 KB
+
+10^3 - crescente
+Tempo Shell Sort:  11 ms
+Tempo Comb Sort:   11 ms
+Memoria Shell Sort: 0 KB
+Memoria Comb Sort:  0 KB
+Memoria utilizada da lista de entrada: 36 KB
+
+10^3 - decrescente
+Tempo Shell Sort:  15 ms
+Tempo Comb Sort:   10 ms
+Memoria Shell Sort: 0 KB
+Memoria Comb Sort:  0 KB
+Memoria utilizada da lista de entrada: 36 KB
+
+10^4 - random
+Tempo Shell Sort:  97 ms
+Tempo Comb Sort:   180 ms
+Memoria Shell Sort: 0 KB
+Memoria Comb Sort:  0 KB
+Memoria utilizada da lista de entrada: 357 KB
+
+10^4 - crescente
+Tempo Shell Sort:  52 ms
+Tempo Comb Sort:   133 ms
+Memoria Shell Sort: 0 KB
+Memoria Comb Sort:  0 KB
+Memoria utilizada da lista de entrada: 357 KB
+
+10^4 - decrescente
+Tempo Shell Sort:  62 ms
+Tempo Comb Sort:   143 ms
+Memoria Shell Sort: 0 KB
+Memoria Comb Sort:  0 KB
+Memoria utilizada da lista de entrada: 357 KB
+
+10^5 - random
+Tempo Shell Sort:  1.539 s
+Tempo Comb Sort:   2.645 s
+Memoria Shell Sort: 0 KB
+Memoria Comb Sort:  0 KB
+Memoria utilizada da lista de entrada: 3517 KB
+
+10^5 - crescente
+Tempo Shell Sort:  477 ms
+Tempo Comb Sort:   1.790 s
+Memoria Shell Sort: 0 KB
+Memoria Comb Sort:  0 KB
+Memoria utilizada da lista de entrada: 3517 KB
+
+10^5 - decrescente
+Tempo Shell Sort:  1.111 s
+Tempo Comb Sort:   1.878 s
+Memoria Shell Sort: 0 KB
+Memoria Comb Sort:  0 KB
+Memoria utilizada da lista de entrada: 3517 KB
+
+10^6 - random
+Tempo Shell Sort:  23.170 s
+Tempo Comb Sort:   36.162 s
+Memoria Shell Sort: 0 KB
+Memoria Comb Sort:  0 KB
+Memoria utilizada da lista de entrada: 35594 KB
+
+10^6 - crescente
+Tempo Shell Sort:  5.720 s
+Tempo Comb Sort:   29.174 s
+Memoria Shell Sort: 0 KB
+Memoria Comb Sort:  0 KB
+Memoria utilizada da lista de entrada: 35594 KB
+
+10^6 - decrescente
+Tempo Shell Sort:  10.480 s
+Tempo Comb Sort:   21.287 s
+Memoria Shell Sort: 0 KB
+Memoria Comb Sort:  0 KB
+Memoria utilizada da lista de entrada: 35594 KB
+
